@@ -5,6 +5,11 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+  <meta
+    name="description"
+    content="Portfolio cá nhân của Ly Hoa Na - GitHub, AI, Automation và các project thực tế."
+  >
+
   <title>Ly Hoa Na | Developer Portfolio</title>
 
   <link rel="stylesheet" href="style.css">
@@ -12,78 +17,170 @@
 
 <body>
 
-  <header>
-    <h1>Xin chào, mình là Ly Hoa Na 👋</h1>
-    <p>Developer • AI Explorer • Automation Builder</p>
-  </header>
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="#home">Ly Hoa Na</a>
 
-  <main>
+      <div class="nav-links">
+        <a href="#about">Giới thiệu</a>
+        <a href="#skills">Kỹ năng</a>
+        <a href="#projects">Projects</a>
+        <a href="#contact">Liên hệ</a>
+      </div>
+    </div>
+  </nav>
 
-    <section>
-      <h2>Giới thiệu</h2>
+  <header id="home" class="hero">
+    <div class="hero-content">
 
-      <p>
-        Mình có nền tảng Công nghệ thông tin và đang xây dựng các project
-        thực tế với GitHub, AI và Automation.
-      </p>
-    </section>
+      <p class="hero-label">Developer Portfolio</p>
 
-    <section>
-      <h2>Kỹ năng</h2>
+      <h1>Xin chào, mình là Ly Hoa Na 👋</h1>
 
-      <ul>
-        <li>Git & GitHub</li>
-        <li>HTML, CSS, JavaScript</li>
-        <li>AI Coding</li>
-        <li>Automation</li>
-      </ul>
-    </section>
-
-    <section>
-      <h2>Projects</h2>
-
-      <h3>🌐 Personal Developer Portfolio</h3>
-
-      <p>
-        Website portfolio cá nhân được xây dựng bằng HTML và CSS,
-        triển khai miễn phí bằng GitHub Pages.
+      <p class="hero-description">
+        Developer • AI Explorer • Automation Builder
       </p>
 
-      <p>
-        <strong>Technologies:</strong>
-        HTML • CSS • Git • GitHub • GitHub Pages
+      <p class="hero-text">
+        Mình đang học, xây dựng và chia sẻ các project thực tế
+        với GitHub, AI và Automation.
       </p>
 
-      <p>
+      <div class="hero-buttons">
+
         <a
-          href="https://github.com/lyhoana/lyhoana.github.io"
-          target="_blank"
-          rel="noopener noreferrer"
+          class="button button-primary"
+          href="#projects"
         >
-          Xem source code trên GitHub →
+          Xem Projects
         </a>
-      </p>
-    </section>
 
-    <section>
-      <h2>Liên hệ</h2>
-
-      <p>
-        GitHub:
         <a
+          class="button button-secondary"
           href="https://github.com/lyhoana"
           target="_blank"
           rel="noopener noreferrer"
         >
-          github.com/lyhoana
+          GitHub
         </a>
+
+      </div>
+    </div>
+  </header>
+
+  <main>
+
+    <section id="about">
+      <p class="section-label">ABOUT</p>
+
+      <h2>Giới thiệu</h2>
+
+      <p>
+        Mình có nền tảng Công nghệ thông tin và đang xây dựng các project
+        thực tế để nâng cao kỹ năng GitHub, lập trình, AI và Automation.
       </p>
+
+      <p>
+        Mục tiêu của mình là từng bước biến các ý tưởng thành những sản phẩm
+        có thể chạy thật, sử dụng thật và tiếp tục phát triển lâu dài.
+      </p>
+    </section>
+
+    <section id="skills">
+      <p class="section-label">SKILLS</p>
+
+      <h2>Kỹ năng đang phát triển</h2>
+
+      <div class="skill-list">
+        <span class="skill">Git</span>
+        <span class="skill">GitHub</span>
+        <span class="skill">HTML</span>
+        <span class="skill">CSS</span>
+        <span class="skill">JavaScript</span>
+        <span class="skill">AI Coding</span>
+        <span class="skill">Automation</span>
+      </div>
+    </section>
+
+    <section id="projects">
+      <p class="section-label">PROJECTS</p>
+
+      <h2>Projects</h2>
+
+      <div class="project-card">
+
+        <div class="project-icon">
+          🌐
+        </div>
+
+        <div class="project-content">
+
+          <p class="project-number">
+            Project 01
+          </p>
+
+          <h3>Personal Developer Portfolio</h3>
+
+          <p>
+            Website portfolio cá nhân được xây dựng bằng HTML và CSS,
+            triển khai miễn phí bằng GitHub Pages.
+          </p>
+
+          <div class="project-tech">
+            <span>HTML</span>
+            <span>CSS</span>
+            <span>Git</span>
+            <span>GitHub</span>
+            <span>GitHub Pages</span>
+          </div>
+
+          <div class="project-links">
+
+            <a
+              href="https://lyhoana.github.io/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Xem website →
+            </a>
+
+            <a
+              href="https://github.com/lyhoana/lyhoana.github.io"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Source code →
+            </a>
+
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <p class="section-label">CONTACT</p>
+
+      <h2>Liên hệ</h2>
+
+      <p>
+        Các project và quá trình học tập của mình được cập nhật trên GitHub.
+      </p>
+
+      <a
+        class="contact-link"
+        href="https://github.com/lyhoana"
+        target="_blank"
+        rel="noopener noreferrer"
+      >
+        github.com/lyhoana →
+      </a>
     </section>
 
   </main>
 
   <footer>
-    <p>© 2026 Ly Hoa Na</p>
+    <p>© 2026 Ly Hoa Na • Built with GitHub Pages</p>
   </footer>
 
 </body>
