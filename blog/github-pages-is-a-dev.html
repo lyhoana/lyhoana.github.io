@@ -1,0 +1,738 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <meta
+    name="description"
+    content="Hướng dẫn chi tiết cách tạo website bằng GitHub Pages và đăng ký subdomain is-a.dev, dựa trên quá trình thực tế từ lyhoana.github.io đến lyhoana.is-a.dev."
+  >
+
+  <title>Từ GitHub Pages đến is-a.dev | Ly Hoa Na</title>
+
+  <link rel="stylesheet" href="../style.css">
+
+  <style>
+    .article-hero {
+      padding: 90px 24px 70px;
+      background: linear-gradient(135deg, #111827, #172554);
+      color: white;
+    }
+
+    .article-hero-inner {
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .article-hero .eyebrow {
+      margin-bottom: 14px;
+      color: #60a5fa;
+      font-size: 13px;
+      font-weight: 700;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+    }
+
+    .article-hero h1 {
+      max-width: 850px;
+      margin-bottom: 18px;
+      font-size: 46px;
+      line-height: 1.15;
+    }
+
+    .article-hero .lead {
+      max-width: 760px;
+      color: #cbd5e1;
+      font-size: 18px;
+    }
+
+    .article-meta {
+      margin-top: 22px;
+      color: #93c5fd;
+      font-size: 14px;
+    }
+
+    .article-main {
+      max-width: 900px;
+      margin: 0 auto;
+      padding: 50px 24px 70px;
+    }
+
+    .article-content {
+      padding: 42px;
+      background: white;
+      border: 1px solid #e5e7eb;
+      border-radius: 18px;
+      box-shadow: 0 10px 30px rgba(15, 23, 42, 0.06);
+    }
+
+    .article-content h2 {
+      margin-top: 42px;
+      margin-bottom: 16px;
+      font-size: 30px;
+    }
+
+    .article-content h2:first-child {
+      margin-top: 0;
+    }
+
+    .article-content h3 {
+      margin-top: 28px;
+      margin-bottom: 12px;
+      color: #111827;
+      font-size: 22px;
+    }
+
+    .article-content p,
+    .article-content li {
+      font-size: 17px;
+    }
+
+    .article-content ul,
+    .article-content ol {
+      margin: 14px 0 20px 24px;
+    }
+
+    .article-content li + li {
+      margin-top: 8px;
+    }
+
+    .article-content a {
+      color: #2563eb;
+    }
+
+    .article-content code {
+      padding: 2px 6px;
+      border-radius: 5px;
+      background: #eef2ff;
+      color: #1e3a8a;
+      font-family: Consolas, Monaco, monospace;
+      font-size: 0.92em;
+    }
+
+    .article-content pre {
+      overflow-x: auto;
+      margin: 18px 0;
+      padding: 18px;
+      border-radius: 12px;
+      background: #111827;
+      color: #e5e7eb;
+      line-height: 1.6;
+    }
+
+    .article-content pre code {
+      padding: 0;
+      background: transparent;
+      color: inherit;
+    }
+
+    .callout {
+      margin: 24px 0;
+      padding: 18px 20px;
+      border-left: 4px solid #2563eb;
+      border-radius: 10px;
+      background: #eff6ff;
+    }
+
+    .callout.warning {
+      border-left-color: #d97706;
+      background: #fffbeb;
+    }
+
+    .toc {
+      margin: 24px 0 34px;
+      padding: 22px;
+      border: 1px solid #dbeafe;
+      border-radius: 14px;
+      background: #f8fbff;
+    }
+
+    .toc strong {
+      display: block;
+      margin-bottom: 10px;
+    }
+
+    figure {
+      margin: 24px 0 30px;
+    }
+
+    figure img {
+      display: block;
+      width: 100%;
+      height: auto;
+      border: 1px solid #e5e7eb;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(15, 23, 42, 0.07);
+    }
+
+    figcaption {
+      margin-top: 8px;
+      color: #64748b;
+      font-size: 14px;
+      text-align: center;
+    }
+
+    .back-home {
+      display: inline-block;
+      margin-top: 34px;
+      color: #2563eb;
+      font-weight: 700;
+      text-decoration: none;
+    }
+
+    @media (max-width: 700px) {
+      .article-hero {
+        padding: 60px 20px 50px;
+      }
+
+      .article-hero h1 {
+        font-size: 34px;
+      }
+
+      .article-main {
+        padding: 28px 14px 50px;
+      }
+
+      .article-content {
+        padding: 24px;
+      }
+
+      .article-content h2 {
+        font-size: 26px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <nav class="navbar">
+    <div class="nav-container">
+      <a class="logo" href="../index.html">Ly Hoa Na</a>
+
+      <div class="nav-links">
+        <a href="../index.html">Trang chủ</a>
+        <a href="../index.html#projects">Projects</a>
+        <a href="../index.html#articles">Bài viết</a>
+        <a href="../index.html#contact">Liên hệ</a>
+      </div>
+    </div>
+  </nav>
+
+  <header class="article-hero">
+    <div class="article-hero-inner">
+      <p class="eyebrow">Bài viết 01 • GitHub</p>
+
+      <h1>
+        Từ GitHub Pages đến is-a.dev:
+        Hướng dẫn tạo website cá nhân và subdomain miễn phí từ A-Z
+      </h1>
+
+      <p class="lead">
+        Đây là toàn bộ quá trình mình đã thực hiện để đi từ một repository GitHub
+        đến website <strong>lyhoana.github.io</strong>, sau đó đăng ký
+        <strong>lyhoana.is-a.dev</strong> thông qua Pull Request trên dự án open-source is-a.dev.
+      </p>
+
+      <p class="article-meta">
+        Cập nhật: 23/09/2026 • Ly Hoa Na
+      </p>
+    </div>
+  </header>
+
+  <main class="article-main">
+    <article class="article-content">
+
+      <h2>GitHub Pages và is-a.dev là gì?</h2>
+
+      <p>
+        GitHub Pages là dịch vụ hosting website tĩnh trực tiếp từ repository GitHub.
+        Với website cá nhân dạng user site, repository thường có tên
+        <code>username.github.io</code> và website mặc định sẽ chạy tại địa chỉ tương ứng.
+      </p>
+
+      <p>
+        is-a.dev không thay thế GitHub Pages. Nó cung cấp một subdomain dạng
+        <code>tenban.is-a.dev</code>. Trong bài này, GitHub Pages vẫn là nơi host website,
+        còn is-a.dev là địa chỉ đẹp hơn trỏ về website đó.
+      </p>
+
+      <div class="callout">
+        <strong>Mô hình cuối cùng:</strong><br>
+        <code>lyhoana.is-a.dev</code> → <code>lyhoana.github.io</code> → website trên GitHub Pages.
+      </div>
+
+      <div class="toc">
+        <strong>Nội dung chính</strong>
+        <ol>
+          <li>Tạo repository GitHub Pages.</li>
+          <li>Tạo website HTML/CSS và deploy.</li>
+          <li>Kiểm tra điều kiện của is-a.dev.</li>
+          <li>Fork repository is-a.dev/register.</li>
+          <li>Tạo branch đăng ký domain.</li>
+          <li>Tạo file JSON cho subdomain.</li>
+          <li>Tạo Pull Request.</li>
+          <li>Sửa lỗi CI/bot nếu có.</li>
+          <li>Chờ maintainer merge.</li>
+          <li>Kết nối custom domain vào GitHub Pages.</li>
+        </ol>
+      </div>
+
+      <h2>1. Tạo website GitHub Pages</h2>
+
+      <p>
+        Mình bắt đầu bằng repository cá nhân:
+      </p>
+
+      <pre><code>lyhoana.github.io</code></pre>
+
+      <p>
+        Với user site, cách đặt tên này rất quan trọng vì GitHub Pages dùng nó để tạo
+        địa chỉ mặc định:
+      </p>
+
+      <pre><code>https://lyhoana.github.io/</code></pre>
+
+      <p>
+        Website ban đầu của mình chỉ cần những file cơ bản:
+      </p>
+
+      <pre><code>lyhoana.github.io/
+├── index.html
+├── style.css
+└── README.md</code></pre>
+
+      <p>
+        Sau khi thêm <code>index.html</code> và <code>style.css</code>, commit thay đổi,
+        GitHub Pages có thể publish website trực tiếp từ repository.
+      </p>
+
+      <figure>
+        <img
+          src="../assets/images/github-isadev/01-portfolio-github-pages.png"
+          alt="Website portfolio chạy trên GitHub Pages"
+          loading="lazy"
+        >
+        <figcaption>
+          Website portfolio sau khi được deploy bằng GitHub Pages.
+        </figcaption>
+      </figure>
+
+      <h2>2. Hoàn thiện website trước khi xin is-a.dev</h2>
+
+      <p>
+        Đây là bước dễ bị bỏ qua. Theo tài liệu is-a.dev hiện tại, website nên
+        tương đối hoàn chỉnh, liên quan tới software development và không dùng cho
+        mục đích thương mại.
+      </p>
+
+      <p>
+        Vì vậy mình hoàn thiện trước các phần:
+      </p>
+
+      <ul>
+        <li>Giới thiệu cá nhân.</li>
+        <li>Kỹ năng.</li>
+        <li>Projects.</li>
+        <li>Liên hệ.</li>
+        <li>Responsive cho mobile.</li>
+      </ul>
+
+      <div class="callout warning">
+        <strong>Lưu ý:</strong>
+        nếu mục đích chính của website là bán hàng, affiliate hoặc kinh doanh,
+        hãy đọc kỹ Terms of Service của is-a.dev trước khi đăng ký.
+      </div>
+
+      <h2>3. Fork repository đăng ký của is-a.dev</h2>
+
+      <p>
+        is-a.dev quản lý việc đăng ký domain thông qua GitHub.
+        Mình vào repository <code>is-a-dev/register</code> và tạo một fork về tài khoản của mình.
+      </p>
+
+      <figure>
+        <img
+          src="../assets/images/github-isadev/02-fork-is-a-dev.png"
+          alt="Màn hình Create a new fork của repository is-a-dev/register"
+          loading="lazy"
+        >
+        <figcaption>
+          Tạo fork repository is-a-dev/register về tài khoản GitHub cá nhân.
+        </figcaption>
+      </figure>
+
+      <p>
+        Sau khi fork, mình có repository:
+      </p>
+
+      <pre><code>lyhoana/register</code></pre>
+
+      <p>
+        Fork là bản sao của repository gốc dưới tài khoản của mình.
+        Mình có thể chỉnh sửa fork mà không tác động trực tiếp đến repository chính.
+      </p>
+
+      <h2>4. Tạo branch riêng để đăng ký domain</h2>
+
+      <p>
+        Thay vì sửa trực tiếp trên <code>main</code>, mình tạo branch riêng:
+      </p>
+
+      <pre><code>dang-ky-lyhoana-domain</code></pre>
+
+      <p>
+        Cách này giúp <code>main</code> giữ sạch và toàn bộ thay đổi đăng ký domain
+        nằm trong một branch riêng. Sau này branch này được dùng để tạo Pull Request.
+      </p>
+
+      <h2>5. Tạo file domain JSON</h2>
+
+      <p>
+        Trong repository fork, is-a.dev lưu từng domain dưới thư mục:
+      </p>
+
+      <pre><code>domains/</code></pre>
+
+      <p>
+        Với subdomain mình muốn là:
+      </p>
+
+      <pre><code>lyhoana.is-a.dev</code></pre>
+
+      <p>
+        tên file được tạo là:
+      </p>
+
+      <pre><code>domains/lyhoana.json</code></pre>
+
+      <p>
+        Website của mình nằm ở <code>lyhoana.github.io</code>, nên bản ghi CNAME
+        trỏ đến GitHub Pages:
+      </p>
+
+      <pre><code>{
+  "owner": {
+    "username": "lyhoana",
+    "email": "YOUR_PUBLIC_CONTACT_EMAIL"
+  },
+  "records": {
+    "CNAME": "lyhoana.github.io"
+  }
+}</code></pre>
+
+      <div class="callout warning">
+        <strong>Đừng copy email của mình.</strong>
+        Hãy thay <code>YOUR_PUBLIC_CONTACT_EMAIL</code> bằng thông tin liên hệ mà bạn
+        chấp nhận công khai trong repository.
+      </div>
+
+      <figure>
+        <img
+          src="../assets/images/github-isadev/03-domain-json.png"
+          alt="File lyhoana.json trong thư mục domains"
+          loading="lazy"
+        >
+        <figcaption>
+          File JSON đăng ký subdomain trỏ CNAME về GitHub Pages.
+        </figcaption>
+      </figure>
+
+      <h2>6. Commit thay đổi</h2>
+
+      <p>
+        Sau khi kiểm tra JSON, mình commit file vào branch đăng ký.
+        Một commit message dễ hiểu sẽ giúp lịch sử repository rõ ràng hơn, ví dụ:
+      </p>
+
+      <pre><code>Đăng ký subdomain lyhoana.is-a.dev</code></pre>
+
+      <p>
+        Trong quá trình làm, mình còn thêm thông tin liên hệ và tạo thêm một commit.
+        Đây cũng là lúc mình thấy Git hoạt động giống một hệ thống “save point”:
+        mỗi commit ghi lại một mốc thay đổi cụ thể.
+      </p>
+
+      <h2>7. Tạo Pull Request về repository is-a.dev/register</h2>
+
+      <p>
+        Khi branch đã có thay đổi, mình chọn <strong>Compare &amp; pull request</strong>.
+        Cấu hình đúng sẽ có dạng:
+      </p>
+
+      <pre><code>base repository: is-a-dev/register
+base: main
+
+head repository: lyhoana/register
+compare: dang-ky-lyhoana-domain</code></pre>
+
+      <figure>
+        <img
+          src="../assets/images/github-isadev/04-open-pull-request.png"
+          alt="Màn hình Open a pull request"
+          loading="lazy"
+        >
+        <figcaption>
+          Tạo Pull Request từ branch trong fork về repository chính của is-a.dev.
+        </figcaption>
+      </figure>
+
+      <h3>Điền PR template thật cẩn thận</h3>
+
+      <p>
+        is-a.dev dùng template và bot validation. Những phần quan trọng mình phải điền gồm:
+      </p>
+
+      <ul>
+        <li>Các checkbox Requirements.</li>
+        <li>Website Preview.</li>
+        <li>Website Purpose.</li>
+      </ul>
+
+      <p>
+        Một lỗi mình đã gặp là checkbox nhìn trên Preview có vẻ đúng,
+        nhưng source Markdown lại viết:
+      </p>
+
+      <pre><code>[x ]</code></pre>
+
+      <p>
+        Bot yêu cầu chính xác:
+      </p>
+
+      <pre><code>[x]</code></pre>
+
+      <figure>
+        <img
+          src="../assets/images/github-isadev/05-pr-template-error.png"
+          alt="Pull Request bị báo incomplete PR template"
+          loading="lazy"
+        >
+        <figcaption>
+          Bot báo lỗi template: đây là lỗi nhỏ nhưng khiến PR chưa thể được duyệt.
+        </figcaption>
+      </figure>
+
+      <p>
+        Sau khi sửa lại checkbox đúng chuẩn, label lỗi biến mất và validation chạy lại.
+      </p>
+
+      <figure>
+        <img
+          src="../assets/images/github-isadev/07-pr-corrected.png"
+          alt="Pull Request sau khi sửa template"
+          loading="lazy"
+        >
+        <figcaption>
+          Pull Request sau khi sửa template đúng.
+        </figcaption>
+      </figure>
+
+      <h2>8. CI pass chưa có nghĩa là domain đã hoạt động</h2>
+
+      <p>
+        Sau khi bot kiểm tra, mình thấy trạng thái:
+      </p>
+
+      <pre><code>All checks have passed</code></pre>
+
+      <p>
+        Nhưng PR vẫn cần code owner/maintainer review trước khi merge.
+        Có thời điểm branch của mình còn báo “out-of-date with the base branch”.
+        GitHub cho phép update branch khi thay đổi có thể merge sạch.
+      </p>
+
+      <figure>
+        <img
+          src="../assets/images/github-isadev/06-checks-review.png"
+          alt="GitHub báo all checks have passed nhưng vẫn review required"
+          loading="lazy"
+        >
+        <figcaption>
+          CI đã pass nhưng vẫn cần maintainer review trước khi merge.
+        </figcaption>
+      </figure>
+
+      <p>
+        Đây là chỗ mình học được một điểm rất quan trọng:
+        <strong>Pull Request Open chưa có nghĩa là thay đổi đã nằm trong repository chính.</strong>
+      </p>
+
+      <h2>9. Chờ Pull Request được merge</h2>
+
+      <p>
+        Trước khi PR merge, mình thử kiểm tra domain và trang is-a.dev vẫn báo
+        subdomain còn available. Điều đó hoàn toàn bình thường vì file JSON vẫn chỉ
+        nằm trong branch/fork của mình.
+      </p>
+
+      <figure>
+        <img
+          src="../assets/images/github-isadev/08-domain-available-before-merge.png"
+          alt="is-a.dev báo domain vẫn available trước khi Pull Request được merge"
+          loading="lazy"
+        >
+        <figcaption>
+          Trước khi PR được merge, is-a.dev vẫn có thể báo subdomain còn available.
+        </figcaption>
+      </figure>
+
+      <p>
+        Chỉ khi maintainer merge Pull Request thì
+        <code>domains/lyhoana.json</code> mới xuất hiện trên branch <code>main</code>
+        của repository chính.
+      </p>
+
+      <h2>10. Kết nối is-a.dev với GitHub Pages</h2>
+
+      <p>
+        Đây là bước cuối cùng và nên làm sau khi Pull Request đã được merge.
+        Mình quay lại repository website:
+      </p>
+
+      <pre><code>lyhoana/lyhoana.github.io</code></pre>
+
+      <p>
+        Sau đó vào:
+      </p>
+
+      <pre><code>Settings
+→ Pages
+→ Custom domain</code></pre>
+
+      <p>
+        và nhập:
+      </p>
+
+      <pre><code>lyhoana.is-a.dev</code></pre>
+
+      <p>
+        GitHub Pages sẽ lưu custom domain. Nếu site publish từ branch,
+        GitHub có thể tạo file <code>CNAME</code> ở root repository.
+        File của mình hiện có nội dung:
+      </p>
+
+      <pre><code>lyhoana.is-a.dev</code></pre>
+
+      <p>
+        Sau khi DNS và chứng chỉ được cập nhật, mình bật
+        <strong>Enforce HTTPS</strong>.
+      </p>
+
+      <div class="callout">
+        <strong>Kết quả:</strong><br>
+        Website vẫn được host bằng GitHub Pages, nhưng có thể truy cập bằng
+        <code>https://lyhoana.is-a.dev/</code>.
+      </div>
+
+      <h2>Những lỗi mình đã gặp và cách xử lý</h2>
+
+      <h3>1. Thư mục domains có quá nhiều file</h3>
+
+      <p>
+        GitHub có thể báo danh sách trong thư mục <code>domains</code> bị truncate.
+        Đây không phải lỗi đăng ký domain. Cách đơn giản là tạo file từ root repository
+        và nhập cả đường dẫn:
+      </p>
+
+      <pre><code>domains/lyhoana.json</code></pre>
+
+      <h3>2. Branch bị chậm hơn main</h3>
+
+      <p>
+        Repository is-a.dev có rất nhiều Pull Request nên <code>main</code> thay đổi liên tục.
+        Nếu branch cũ chưa có thay đổi quan trọng, có thể sync fork rồi tạo branch mới.
+        Nếu PR đã tồn tại và GitHub cho phép clean merge, có thể dùng
+        <strong>Update branch</strong>.
+      </p>
+
+      <h3>3. Bot báo Incomplete PR template</h3>
+
+      <p>
+        Đừng chỉ nhìn tab Preview. Hãy kiểm tra source Markdown.
+        Trường hợp của mình là <code>[x ]</code> thay vì <code>[x]</code>.
+      </p>
+
+      <h3>4. Domain chưa vào được dù CI đã pass</h3>
+
+      <p>
+        CI pass chỉ cho biết kiểm tra tự động đã ổn.
+        Domain chưa được cấp cho đến khi maintainer merge Pull Request.
+      </p>
+
+      <h3>5. PR merge rồi nhưng website vẫn chưa chạy domain mới</h3>
+
+      <p>
+        Sau khi merge, cần cấu hình <strong>Settings → Pages → Custom domain</strong>
+        ở repository GitHub Pages. DNS và HTTPS cũng có thể cần thời gian để cập nhật.
+      </p>
+
+      <h2>Mình đã học được gì từ project này?</h2>
+
+      <p>
+        Ban đầu mục tiêu chỉ là có một website cá nhân và một domain đẹp hơn.
+        Nhưng trong quá trình làm, mình đã thực hành gần như trọn một workflow GitHub thực tế:
+      </p>
+
+      <pre><code>Repository
+→ Commit
+→ GitHub Pages
+→ Fork
+→ Branch
+→ Pull Request
+→ CI / Bot validation
+→ Fix lỗi
+→ Maintainer review
+→ Merge
+→ Custom domain</code></pre>
+
+      <p>
+        Điều mình thấy đáng giá nhất là GitHub không còn chỉ là chỗ “đăng code”.
+        Nó là nơi mình có thể xây project, lưu lịch sử thay đổi, cộng tác với open-source,
+        review lỗi và deploy sản phẩm thật.
+      </p>
+
+      <h2>Tài liệu chính thức nên đọc</h2>
+
+      <ul>
+        <li>
+          <a href="https://docs.github.com/en/pages/quickstart" target="_blank" rel="noopener noreferrer">
+            GitHub Pages Quickstart
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/managing-a-custom-domain-for-your-github-pages-site" target="_blank" rel="noopener noreferrer">
+            GitHub Docs - Managing a custom domain
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.is-a.dev/quickstart/" target="_blank" rel="noopener noreferrer">
+            is-a.dev Quickstart
+          </a>
+        </li>
+        <li>
+          <a href="https://docs.is-a.dev/guides/github-pages/" target="_blank" rel="noopener noreferrer">
+            is-a.dev - GitHub Pages Guide
+          </a>
+        </li>
+      </ul>
+
+      <div class="callout">
+        <strong>Ghi chú:</strong>
+        giao diện GitHub và quy định của is-a.dev có thể thay đổi theo thời gian.
+        Khi làm lại, hãy đối chiếu với tài liệu chính thức mới nhất.
+      </div>
+
+      <a class="back-home" href="../index.html">← Quay về trang chủ</a>
+
+    </article>
+  </main>
+
+  <footer>
+    <p>© 2026 Ly Hoa Na • Built with GitHub Pages</p>
+  </footer>
+
+</body>
+</html>
